@@ -1,0 +1,148 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding and margin */
+body,
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd,
+ul[role='list'], ol[role='list'],
+li,
+pre,
+table,
+fieldset,
+hr,
+button,
+input, select, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set base for responsive typography */
+html {
+  font-size: 100%; /* 16px */
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Remove the inner border and padding in Firefox */
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Remove default button styling */
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Handle hover, focus, and active states for interactive elements */
+button:hover,
+button:focus,
+button:active,
+input[type='button']:hover,
+input[type='button']:focus,
+input[type='button']:active,
+input[type='reset']:hover,
+input[type='reset']:focus,
+input[type='reset']:active,
+input[type='submit']:hover,
+input[type='submit']:focus,
+input[type='submit']:active {
+  outline: none;
+  border: none;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make forms easier to use */
+input, button, textarea, select {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Improve media defaults */
+video,
+audio {
+  max-width: 100%;
+}
+
+/* Accessibly hide content but keep it available for screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
