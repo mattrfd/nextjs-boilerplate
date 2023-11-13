@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS Boilerplate
 
-## Getting Started
+## Description
 
-First, run the development server:
+This project integrates a Next.js frontend with an Express backend. The backend is configured to generate mock data using TypeScript types, making it ideal for frontend development and testing.
+
+## Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/mattrfd/nextjs-boilerplate
+cd nextjs-boilerplate
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run the application:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Start the NextJS Development Server:
+```bash
+npm run dev
+```
+This will run the Next.js app on http://localhost:3000.
 
-## Learn More
+2. Access the Express Server
+The Express server runs concurrently and is accessible at http://localhost:3001.
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js for the frontend
+- Express server for backend API
+- Mock data generation based on TypeScript types
+- ESLint and Prettier for code formatting and consistency
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Technology Stack
 
-## Deploy on Vercel
+- Next.js
+- Express
+- TypeScript
+- Node.js
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technology Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions to this project are welcome. Please follow these steps to contribute:
+
+- Fork the repository.
+- Create a new branch (git checkout -b feature-branch).
+- Make your changes and commit them (git commit -am 'Add a new feature').
+- Push to the branch (git push origin feature-branch).
+- Create a new Pull Request.
