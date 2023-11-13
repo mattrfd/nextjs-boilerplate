@@ -1,5 +1,5 @@
-import { ExampleButton } from "./Button";
+import { SmapleButton } from "./SampleButton";
 
 export {
-  ExampleButton
+  SmapleButton
 };

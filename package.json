@@ -3,21 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "server": "ts-node server/server.ts",
+    "dev": "concurrently \"next dev\" \"npm:server\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.6.1",
+    "express": "^4.18.2",
     "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.16",
+    "@types/express": "^4.17.21",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "casual": "^1.6.2",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
     "eslint": "^8.53.0",
     "eslint-config-next": "^14.0.2",
     "eslint-config-prettier": "^9.0.0",
@@ -29,6 +37,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
 }

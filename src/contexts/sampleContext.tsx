@@ -1,9 +1,11 @@
-import React, { ReactNode, createContext, useContext, useState } from 'react';
+import React, { ReactNode, createContext, useContext, useEffect, useState } from "react";
+import axios from "axios";
+import { SampleType } from "@/types";
 
 // Initialization -----------
 interface SampleContextType {
-  stateValue: string;
-  setStateValue: React.Dispatch<React.SetStateAction<string>>;
+  sampleData: SampleType[];
+  isLoading: boolean;
 }
 
 const MyContext = createContext<SampleContextType | undefined>(undefined);
@@ -14,10 +16,32 @@ interface SampleProviderProps {
 }
 
 export const SampleProvider: React.FC<SampleProviderProps> = ({ children }) => {
-  const [stateValue, setStateValue] = useState<string>('');
+  const [sampleData, setSampleData] = useState<SampleType[]>([]);
+  const [error, setError] = useState<Error | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      setIsLoading(true);
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/sampleData`);
+        setSampleData(response.data);
+      } catch (e) {
+        if (axios.isAxiosError(error)) {
+          setError(error);
+        } else {
+          setError(new Error('An unknown error occurred fetching SampleData'));
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUsers();
+  }, []);
 
   return (
-    <MyContext.Provider value={{ stateValue, setStateValue }}>
+    <MyContext.Provider value={{ sampleData, isLoading }}>
       {children}
     </MyContext.Provider>
   );
